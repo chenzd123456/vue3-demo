@@ -11,8 +11,8 @@ import classNames from 'classnames' //引入classnames库来帮助处理CSS clas
 
 const props = defineProps({ //定义'props'对象
   id: {
-    type: String, //定义id属性的数据类型为字符串 -->
-    default: '' //设置默认值为空字符串 -->
+    type: String, //定义id属性的数据类型为字符串
+    default: '' //设置默认值为空字符串
   },
   size: {
     type: String, //定义size属性的数据类型为字符串
