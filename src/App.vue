@@ -13,22 +13,32 @@
     <CheckBox id="CheckBox3" size="large" v-model="isChecked3">
       Large CheckBox
     </CheckBox>
+    <br>
+    <button @click="showModal">open</button>
+    <Modal :active="isModalActive" @close="closeModal">
+      <p> this is a modal</p>
+    </Modal>
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from "vue";
 import CheckBox from "@/components/CheckBox.vue";
-export default {
-  components: {
-    CheckBox,  // 引入CheckBox组件
-  },
-  data() {
-    return {
-      isChecked1: false,  // 初始化isChecked1为false
-      isChecked2: true,   // 初始化isChecked2为true
-      isChecked3: false,  // 初始化isChecked3为false
-    };
-  },
-};
+import Modal from "./components/Modal.vue";
+
+const isChecked1 = ref(false); // 初始化isChecked1为false
+const isChecked2 = ref(true);  // 初始化isChecked2为true
+const isChecked3 = ref(false);  // 初始化isChecked3为false
+
+const isModalActive = ref(false);  // 初始化isModalActive为false
+
+function showModal() {
+  isModalActive.value = true;
+}
+
+function closeModal() {
+  isModalActive.value = false;
+}
+
 </script>
 ```
