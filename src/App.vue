@@ -24,7 +24,7 @@
 <script setup>
 import { ref } from "vue";
 import CheckBox from "@/components/CheckBox.vue";
-import Modal from "./components/Modal.vue";
+import Modal from "@/components/Modal.vue";
 
 const isChecked1 = ref(false); // 初始化isChecked1为false
 const isChecked2 = ref(true);  // 初始化isChecked2为true
