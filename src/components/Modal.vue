@@ -3,15 +3,37 @@
         <div class="overlay" v-show="active">
             <div class="modal">
                 <slot></slot>
-                <button @click="emit('close')">Close</button>
+                <button @click="emitClose">Close</button>
             </div>
         </div>
     </Teleport>
 </template>
 
 <script setup>
-const props = defineProps({ active: false })
-const emit = defineEmits(["close"])
+import { onMounted, onUnmounted } from 'vue'
+
+const props = defineProps({ active: false });
+const emit = defineEmits(["close"]);
+
+function emitClose() {
+    emit('close');
+}
+
+function onEscDown(event) {
+    if (event.keyCode === 27) {
+        emitClose()
+    }
+}
+
+// 在组件 mount 时注册按键事件的监听器
+onMounted(() => {
+    window.addEventListener('keydown', onEscDown)
+})
+// 在组件 unmount 时移除按键事件的监听器
+onUnmounted(() => {
+    window.removeEventListener('keydown', onEscDown)
+})
+
 </script>
 
 <style scoped>
@@ -21,7 +43,7 @@ const emit = defineEmits(["close"])
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,6 +55,6 @@ const emit = defineEmits(["close"])
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 </style>
