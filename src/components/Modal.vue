@@ -1,6 +1,6 @@
 <template>
     <Teleport to="body">
-        <div class="overlay" v-show="active">
+        <div class="overlay" v-show="active" @click.stop="emitClose">
             <div class="modal">
                 <slot></slot>
                 <button @click="emitClose">Close</button>
