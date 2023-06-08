@@ -14,7 +14,9 @@
       Large CheckBox
     </CheckBox>
     <br>
-    <button @click="showModal">open</button>
+    <Button @click="showModal">
+      这是一个按钮
+    </Button>
     <Modal :active="isModalActive" @close="closeModal">
       <p> this is a modal</p>
     </Modal>
@@ -25,6 +27,7 @@
 import { ref } from "vue";
 import CheckBox from "@/components/CheckBox.vue";
 import Modal from "@/components/Modal.vue";
+import { Button } from "@/components/Button";
 
 const isChecked1 = ref(false); // 初始化isChecked1为false
 const isChecked2 = ref(true);  // 初始化isChecked2为true

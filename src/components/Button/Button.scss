@@ -1,0 +1,99 @@
+.button {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s, color 0.2s;
+    padding: 12px 20px;
+    border-radius: 4px;
+    background-color: #409eff;
+    color: #fff;
+
+    &--primary {
+        background-color: #409eff;
+        color: #fff;
+    }
+
+    &--success {
+        background-color: #67c23a;
+        color: #fff;
+    }
+
+    &--warning {
+        background-color: #e6a23c;
+        color: #fff;
+    }
+
+    &--danger {
+        background-color: #f56c6c;
+        color: #fff;
+    }
+
+    &--info {
+        background-color: #909399;
+        color: #fff;
+    }
+
+    &--text {
+        background-color: transparent;
+        color: #909399;
+    }
+
+    &.is-plain {
+        border: 1px solid #c0c4cc;
+        background-color: transparent;
+        color: #303133;
+    }
+
+    &.is-round {
+        border-radius: 20px;
+    }
+
+    &.is-circle {
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.2);
+    }
+
+    &.is-disabled,
+    &.is-disabled:hover {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .loading-icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 10px;
+        margin-top: -3px;
+        border-radius: 50%;
+        animation: loading 1s infinite linear;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-top-color: rgba(255, 255, 255, 0.9);
+    }
+
+    @keyframes loading {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
