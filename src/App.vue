@@ -19,16 +19,16 @@
     </Button>
     <Slider :min="0" :max="100" v-model="sliderValue" />
     <p>当前值: {{ sliderValue }}</p>
-    <Modal :active="isModalActive" @close="closeModal">
+    <ModalPanel :active="isModalActive" @close="closeModal">
       <p> this is a modal</p>
-    </Modal>
+    </ModalPanel>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import CheckBox from "@/components/CheckBox.vue";
-import Modal from "@/components/Modal.vue";
+import ModalPanel from "@/components/ModalPanel.vue";
 import { Button } from "@/components/Button";
 import { Slider } from "@/components/Slider";
 
